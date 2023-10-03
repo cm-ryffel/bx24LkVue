@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="menu">
-      <button class="menu-item rounded bg-secondary text-light p-2" :class="{ 'active': activePage === 'tasks' }" @click="showTasks = true; showPackages = false; showBills = false; showProjects = false; showFAQ = false; showLicenses = false; activePage = 'tasks'">Задачи</button>
-      <button class="menu-item rounded bg-secondary text-light" :class="{ 'active': activePage === 'packages' }" @click="showTasks = false; showPackages = true; showBills = false; showProjects = false; showFAQ = false; showLicenses = false; activePage = 'packages'">Пакеты</button>
-      <button class="menu-item rounded bg-secondary text-light" :class="{ 'active': activePage === 'bills' }" @click="showTasks = false; showPackages = false; showBills = true; showProjects = false; showFAQ = false; showLicenses = false; activePage = 'bills'">Счета</button>
-      <button class="menu-item rounded bg-secondary text-light" :class="{ 'active': activePage === 'projects' }" @click="showTasks = false; showPackages = false; showBills = false; showProjects = true; showFAQ = false; showLicenses = false; activePage = 'projects'">Проекты</button>
-      <button class="menu-item rounded bg-secondary text-light" :class="{ 'active': activePage === 'faq' }" @click="showTasks = false; showPackages = false; showBills = false; showProjects = false; showFAQ = true; showLicenses = false; activePage = 'faq'">FAQ</button>
-      <button class="menu-item rounded bg-secondary text-light" :class="{ 'active': activePage === 'licenses' }" @click="showTasks = false; showPackages = false; showBills = false; showProjects = false; showFAQ = false; showLicenses = true; activePage = 'licenses'">Лицензии</button>
+      <button class="menu-item rounded  text-light p-2" :class="{ 'active': activePage === 'tasks' }" @click="showTasks = true; showPackages = false; showBills = false; showProjects = false; showFAQ = false; showLicenses = false; activePage = 'tasks'">Задачи</button>
+      <button class="menu-item rounded text-light" :class="{ 'active': activePage === 'packages' }" @click="showTasks = false; showPackages = true; showBills = false; showProjects = false; showFAQ = false; showLicenses = false; activePage = 'packages'">Пакеты</button>
+      <button class="menu-item rounded text-light" :class="{ 'active': activePage === 'bills' }" @click="showTasks = false; showPackages = false; showBills = true; showProjects = false; showFAQ = false; showLicenses = false; activePage = 'bills'">Счета</button>
+      <button class="menu-item rounded text-light" :class="{ 'active': activePage === 'projects' }" @click="showTasks = false; showPackages = false; showBills = false; showProjects = true; showFAQ = false; showLicenses = false; activePage = 'projects'">Проекты</button>
+      <button class="menu-item rounded text-light" :class="{ 'active': activePage === 'faq' }" @click="showTasks = false; showPackages = false; showBills = false; showProjects = false; showFAQ = true; showLicenses = false; activePage = 'faq'">FAQ</button>
+      <button class="menu-item rounded text-light" :class="{ 'active': activePage === 'licenses' }" @click="showTasks = false; showPackages = false; showBills = false; showProjects = false; showFAQ = false; showLicenses = true; activePage = 'licenses'">Лицензии</button>
     </div>
     <div>
       <TasksPage v-show="showTasks" class="menu-content"/>
@@ -65,8 +65,26 @@ export default {
 }
 
 .menu-item {
+  display: inline-block;
+  padding: 8px 16px;
   margin-bottom: 10px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background-color: #2c3e50 !important;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: #fff;
+  color: #2c3e50;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 @media screen and (min-width: 768px) {
@@ -77,5 +95,19 @@ export default {
 
   .menu-item {
     margin: 0 10px;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
   }
-}</style>
+
+  .menu-item:hover,
+  .menu-item.active {
+    background-color: #fff;
+    color: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+</style>
