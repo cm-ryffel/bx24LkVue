@@ -1,5 +1,5 @@
 <script setup>
-import TheHeader from './components/TheHeader.vue';
+import TheHeader from './components/theheader.vue';
 import HomePage from './components/HomePage.vue';
 </script>
 
